@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Posts</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>All Posts</h1>
+        <hr>
+        {% for post in posts %}
+        <div class="card my-3">
+            <img src="{{ post.image.url }}" class="card-img-top" alt="Post Image" style="width: 240px; height: 240px;">
+            <div class="card-body">
+                <h2 class="card-title">{{ post.title }}</h2>
+                <p class="card-text">{{ post.content }}</p>
+                <p class="card-text"><small class="text-muted">Published on: {{ post.date_posted }}</small></p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
