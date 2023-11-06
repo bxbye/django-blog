@@ -3,6 +3,7 @@ from . import views
 from django.conf.urls.static import static
 from django.conf import settings
 
+app_name = 'blog'
 urlpatterns = [
     path(route='all-posts/', view=views.all_posts, name='all_posts'),
     # Other URL patterns
