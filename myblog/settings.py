@@ -26,12 +26,13 @@ SECRET_KEY = 'django-insecure-^pme4jd0u7-$9pwyn6mu4atx$64_poj=y&iiwj$cv*c5fwb^!c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-kadir-blog-0891d8af8e62.herokuapp.com']
+ALLOWED_HOSTS = ['django-kadir-blog-0891d8af8e62.herokuapp.com', '127.0.0.1'] #we can use '*' to allow all IP hosts.
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'menu.apps.MenuConfig',
     'blog.apps.BlogConfig',
     'django.contrib.admin',
     'django.contrib.auth',

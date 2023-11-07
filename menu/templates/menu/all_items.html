@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu Items</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .menu-item {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Menu Items</h1>
+
+        <div class="row">
+            {% for item in menu_items %}
+                <div class="col-md-3 menu-item"> <!-- Adjust the column width (col-md-3) based on your requirement -->
+                    <div class="card">
+                        <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.name }} Image">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ item.name }}</h5>
+                            <p class="card-text">Description: {{ item.description }}</p>
+                            <p class="card-text">Price: ${{ item.price }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:8 %} <!-- Start a new row after every 8 items -->
+                    </div><div class="row">
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
